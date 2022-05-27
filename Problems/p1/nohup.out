@@ -1,0 +1,35 @@
+Virun composition : 
+No of People : 
+Person composition : 
+Person composition : 
+POSITIVE
+NEGATIVE
+Virun composition : 
+No of People : panic: strconv.ParseInt: parsing "sdf": invalid syntax
+
+goroutine 1 [running]:
+main.checkError(...)
+	/Users/mac/go/src/Problems/p1/main.go:70
+main.main()
+	/Users/mac/go/src/Problems/p1/main.go:26 +0x745
+exit status 2
+Virun composition : 
+No of People : 
+Person composition : 
+Person composition : 
+Person composition : 
+NEGATIVE
+NEGATIVE
+NEGATIVE
+Virun composition : 
+No of People : 
+Person composition : 
+Person composition : 
+POSITIVE
+POSITIVE
+Virun composition : 
+No of People : 
+Person composition : 
+Person composition : 
+POSITIVE
+NEGATIVE

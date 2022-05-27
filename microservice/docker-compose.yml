@@ -1,0 +1,13 @@
+version: "2.2"
+
+services:
+  microservice:
+    build: .
+    env_file:
+      - .env
+    ports:
+      - "8005:8005"
+    volumes:
+      - ./configuration:/config
+    networks: 
+      - default

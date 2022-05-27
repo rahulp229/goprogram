@@ -1,0 +1,154 @@
+swagger: '2.0'
+info:
+  description: OpenApi specification for a todo application
+  title: Todo app OAS
+  version: 1.0.0
+host: 'localhost:32208'
+basePath: /
+schemes:
+  - http
+paths:
+  /todos:
+    get:
+      produces:
+        - application/json
+      parameters:
+        - description: ID of the user
+          format: uuid
+          in: query
+          name: user
+          required: true
+          type: string
+        - description: filter todo's by status
+          enum:
+            - on_hold
+            - working
+            - done
+          in: query
+          name: status
+          type: string
+      responses:
+        '200':
+          description: get todo's response
+          schema:
+            items:
+              $ref: '#/definitions/Todo'
+            type: array
+        default:
+          description: unexpected Error
+          schema:
+            $ref: '#/definitions/Error'
+      description: Returns all the todo's of the user
+      operationId: getTodos
+    post:
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - description: Todo to add
+          in: body
+          name: body
+          required: true
+          schema:
+            $ref: '#/definitions/Todo'
+      responses:
+        '201':
+          description: Todo creation response
+          schema:
+            $ref: '#/definitions/Todo'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+      description: Creates a new todo
+      operationId: createTodo
+  '/todos/{todoId}':
+    delete:
+      produces:
+        - application/json
+      parameters:
+        - description: Id of the todo
+          format: int32
+          in: path
+          name: todoId
+          required: true
+          type: integer
+      responses:
+        '204':
+          description: no content
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+      description: delete a todo
+      operationId: deleteTodo
+    put:
+      consumes:
+        - application/x-www-form-urlencoded
+      parameters:
+        - description: Id of the todo
+          format: int32
+          in: path
+          name: todoId
+          required: true
+          type: integer
+        - in: formData
+          name: task
+          type: string
+        - enum:
+            - on_hold
+            - working
+            - done
+          in: formData
+          name: status
+          type: string
+      responses:
+          '200':
+            content:
+              application/json:
+                schema:
+                  $ref: '#/components/schemas/Todo'
+      description: Updates the status of a todo
+      operationId: updateTodo
+definitions:
+  Error:
+    properties:
+      code:
+        format: int32
+        type: integer
+      message:
+        type: string
+    required:
+      - code
+      - message
+    type: object
+  Todo:
+    properties:
+      completed_at:
+        format: date-time
+        type: string
+      created_at:
+        format: date-time
+        type: string
+      id:
+        format: int32
+        type: integer
+      status:
+        enum:
+          - on_hold
+          - working
+          - done
+        type: string
+      task:
+        type: string
+      user:
+        format: uuid
+        type: string
+    required:
+      - user
+      - task
+      - status
+    type: object
+x-components: {}
+

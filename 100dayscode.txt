@@ -1,0 +1,8 @@
+Hi connections
+I am starting 100dayscode challenge from today(23/5/2022) i will post one golang program where i will solve one problem statement every day.
+
+
+array/slice Sorting - 
+prime numbers
+stack - lifo, fifo
+binary search

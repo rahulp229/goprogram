@@ -1,0 +1,184 @@
+Q1. gRPC Vs Rest api
+gRPC 
+    - Data format uses protocol buffter : smaller and faster
+    - HTTP/2(lower letancy)
+    - Bidirectional &Async
+    - client side Streaming support
+    - server side Streaming support
+    - Api oriented  (no constraint free design) 
+Rest Api
+    - Data format uses Json : text based, slower, bigger
+    - HTTP1.1(higher letancy)
+    - Client -> server request only
+    - Request -> Response support only
+    - Crud oriented(Post, Put, Get, Delete)
+
+-------------------------------------------------------------------------------------------------------
+
+Q2. Golang benifits?
+Answer:
+1. It support concurrent programming using go routine
+2. easy to use simple setup and more readable
+3. Automatic garbage collection is notable more efficient than java or python because It executes concurrently alongside program.
+
+
+-------------------------------------------------------------------------------------------------------
+Q3. What are packages?
+Answer:
+    Packages are directories withing your go workspace that contain go source file or other packages
+
+-------------------------------------------------------------------------------------------------------
+Q4. What form of type conversion does Go support? Convert interger to string
+Answer:
+    Go support explicit type conversion to satify its strict typing requirements.
+
+    example :
+    1. integer to float
+        i := 55
+        j := 88.7
+        sum := i + int(j)
+
+    2. integer to string    
+        i := 55
+        j := strconv.Itoa(i)
+
+-------------------------------------------------------------------------------------------------------
+Q5. What is goroutine? How do they stop?
+Answer:
+- Goroutine is function that executes concurrently alongwith any other goroutines
+- It is lightweight thread
+- To create goroutine add go keyword before function declaration
+- Goroutine can stop using channel by passing it signal channel. because goroutine only responde to channel
+-------------------------------------------------------------------------------------------------------
+Q6. What is thread?
+Answer:
+    A thread is a lightweight process that can be managed independantly by scheduler
+
+-------------------------------------------------------------------------------------------------------
+Q7. What is process?
+Answer:
+ In simplest terms, It is an executing program.
+-------------------------------------------------------------------------------------------------------
+Q8. How do you check variable type at runtime?
+Answer:
+    Using Type switch we can check variable type at runtime
+
+func do(i interface{}) {
+	switch v := i.(type) {
+	case int:
+		fmt.Printf("Double %v is %v\n", v, v*2)
+	case string:
+		fmt.Printf("%q is %v bytes long\n", v, len(v))
+	default:
+		fmt.Printf("I don't know  type %T!\n", v)
+	}
+}
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------    
+Q9. What are function closure?
+Answer: 
+    It is function value that references variables from outside its body. The function may access and assign values to referenced variable.
+
+    example: 
+    package main
+
+import "fmt"
+
+func adder() func(int) int {
+	sum := 0
+	return func(x int) int {
+		sum += x
+		return sum
+	}
+}
+
+func main() {
+	pos, neg := adder(), adder()
+	for i := 0; i < 10; i++ {
+		fmt.Println(
+			pos(i),
+			neg(-2*i),
+		)
+	}
+}
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------    
+Q10. what is context ?
+Answer:
+ - context is a standard package of Golang that makes it easy to pass request-scoped values, cancelation signals, and deadlines across API boundaries to all the goroutines involved in handling a request.
+ - A common use case for context is handling HTTP requests
+ - The core of the context package is the Context type, which has the following methods:
+
+    Done() <- chan struct: Returns a channel that is closed when the context is canceled or times out. Done may return nil if the context can never be canceled.
+
+    Deadline() (deadline time.Time, ok bool): Returns the time when the context will be canceled or timed out. Deadline returns ok==false when no deadline is set.
+
+    Err() error: Returns an error that explains why the Done channel was closed. If Done is not closed yet, it returns nil.
+
+    Value(key interface{}) interface{}: Returns the value associated with key or nil if none
+-------------------------------------------------------------------------------------------------------
+- myself
+- i from mumbai
+- in qualification i did master computer applicaton from pune
+- i have 6 years exp in sofware development
+- go exp, i did part various project from iot, banking, and block chain domain
+- i have hand on exp in building low letancy rest api , containersed base microservices , writing unit test case, 
+
+- i have exp to working agile env
+
+- in database i know about sql and nosql databases like mysql, mongodb
+-
+
+mysql rahul patil i from nashik
+in qualification i did post-graduation in MCA with percentage of 70 %
+in my technology stack
+ - i have knowledge of laguages like c , cpp, java, php , golang
+ - in database : oracle, mysql, mongo
+ - frontend angular, react js , javascript, jquery html, css
+
+ golang expe
+
+
+
+
+
+-------------------------------------------------------------------------------------------------------
+What is implicit and explicit?
+Explicit describes something that is very clear and without vagueness or ambiguity. Implicit often functions as the opposite, referring to something that is understood, but not described clearly or directly, and often using implication or assumption.
+
+What is implicit example?
+The definition of implicit refers to something that is suggested or implied but not ever clearly said. An example of implicit is when your wife gives you a dirty look when you drop your socks on the floor.
+
+
+
+-----------------------------------------------------
+
+Hello 
+
+ Today i had interview for client #3665- Lhuiller Philippines  and it was positive at the end of interview client was clearly mentioned that he is satisfy with the interview and good to proceed @Emma also was there after that they asked me to drop.
+
+PFA : kindly check attached screen shot of skype chat
+
+Also i want to share my side on above warning email 
+
+List of interviews which are not cleared by me(as per client)  -
+
+ 1. Mrunalini Patil Koul (Sagacity Softwares Private Limited) :-
+    - this interview was not completed in between client has droped never join again
+
+2. Sneha Mantri (Josh Software) :-  
+    - from my side i give 200% also cleared the coding test as expected 
+
+3. Parimal Kumar (Trigensoft) :-  
+    - they provide the test link but in that test golang option not there only java, python and ruby on rails etc. and i dont have knowledge of that languages. i inform about this problem in skype chat also 
+
+
+4. Healthcare :- 
+    - there were two rounds 1st verbal round which i cleared in 2nd coding round i solve the problem statement and show them result 
+
+5. Nitin Lahoti (Mobisoft Infotech Pvt Ltd) - 
+6. Dhananjay Pote (Winjit Technologies) -
+
+out of these 6 interviews only 2 are genuine. in remaining 4 interview i give my 100% efforts 
+
+
+
+

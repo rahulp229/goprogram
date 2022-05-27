@@ -1,0 +1,220 @@
+*************
+Rest Api/gRPC
+*************
+Q1. What is restful api and Rest ?
+Answer:
+-  Rest stands for representational state transfer. its an software architectural style for implementing web service
+- An api is a defined set of rules, commands, permissions or protocols that allow users and application to interact with or access data from a specific application or microservice
+- Rest is an acronym for Representational state transfer
+The rules, commands, routines and protocols that integrates the invidual microservice so they function as a single application.
+---------------------------------------------
+Q2. gRPC Vs Rest api
+gRPC 
+    - protocol buffter : smaller and faster
+    - HTTP/2(lower letancy)
+    - Bidirectional &Async
+    - Stream support
+    - Api oriented  (no constraint free design) 
+Rest Api
+    - Json : text based, slower, bigger
+    - HTTP1.1(higher letancy)
+    - Client -> server request only
+    - Request -> Response support only
+    - Crud oriented(Post, Put, Get, Delete)
+--------------------------------------------
+=========================================================================================
+****************************
+Authentication/Authorization
+****************************
+Q1. What is OAuth?
+Answer:
+OAuth stands for open authorization protocol. This allows accessing the resources of the resource owner by enabling the client applications on HTTP services such as third-party providers Facebook, GitHub, etc. So with this, you can share resources stored on one site with another site without using their credentials.
+
+=========================================================================================
+********
+Testing
+********
+Q1. What do you understand by Contract Testing?
+Answer:
+According to Martin Flower, contract test is a test at the boundary of an external service which verifies that it meets the contract expected by a consuming service.
+
+Also, contract testing does not test the behavior of the service in depth. Rather, it tests that the inputs & outputs of service calls contain required attributes and the response latency, throughput is within allowed limits.
+
+--------------------------------------------
+Q2.What is the difference between Mock or Stub?
+Answer:
+1.Stub:
+ - A dummy object that helps in running the test.
+ - Provides fixed behavior under certain conditions which can be hard-coded.
+ - Any other behavior of the stub is never tested.
+For example, for an empty stack, you can create a stub that just returns true for empty() method. So, this does not care whether there is an element in the stack or not.
+
+3.Mock:
+ - A dummy object in which certain properties are set initially.
+ - The behavior of this object depends on the set properties.
+ - The object’s behavior can also be tested.
+For example, for a Customer object, you can mock it by setting name and age. You can set age as 12 and then test for isAdult() method that will return true for age greater than 18. So, your Mock Customer object works for the specified condition.
+
+
+
+=========================================================================================
+************
+#Microservice
+************
+Q1. What is microservice?
+Answer:
+- It is an architectural style that structures an application as collection of  small autonomous services modelled around business domain
+- https://www.youtube.com/watch?v=gfWr2_H39N0
+
+----------------------------------------------------------------
+
+Q2. Advantages of microservice architecture?
+Answer:
+1. Independant Development :- It can be easily developed based on their individual functionality
+2. Independant Deployment :- Based on their services, they can be individually deployed in any application
+3. Fault Isolation :- Even if one service of application does not work the system still continue function
+4. Mixed technology stack :- Various technology and languages can be used to build different services on same application
+5.Granular scaling :- Individual component can be scale as per need there is no need of scale all components together
+
+---------------------------------------------------------------
+
+Q3. Features of Microservices?
+Answer:
+1. Decoupling – Services within a system are largely decoupled. So the application as a whole can be easily built, altered, and scaled
+
+2. Componentization – Microservices are treated as independent components that can be easily replaced and upgraded
+
+3. Business Capabilities – Microservices are very simple and focus on a single capability
+
+4. Autonomy – Developers and teams can work independently of each other, thus increasing speed
+
+5. Continous Delivery – Allows frequent releases of software, through systematic automation of software creation, testing, and approval
+
+6. Responsibility – Microservices do not focus on applications as projects. Instead, they treat applications as products for which they are responsible
+
+7. Decentralized Governance – The focus is on using the right tool for the right job. That means there is no standardized pattern or any technology pattern. Developers have the freedom to choose the best useful tools to solve their problems
+
+8. Agility – Microservices support agile development. Any new feature can be quickly developed and discarded again
+--------------------------------------------------------------
+Q4. What is api gateway?
+Answer:
+The REST-API acts as a gateway or a single-entry point into the system. It encapsulates the business logic and handles all the client requests, taking care of the authorization, authentication, sanitizing the input data, and other necessary tasks before providing access to the application resources.
+
+=====================================
+************
+Deployment
+************
+Q1. What is CI/CD ?
+CI:
+- It is a practice of automating the integration of code changes from multiple developers into single code base
+- It is a software development practice where developers commit their work frequently into central code repository
+
+- The key goal for CI are to find and address bugs quicker  and make the process of integrating code accross a team of developers easier, improve software quality and reduce the time it takes to release new feature updates.
+
+CD:
+- CD is carried out after CI to make sure that we can release changes quickly in an error free way.
+- CD automates the entire release process.
+
+
+===========================================
+*********
+Database
+*********
+NoSQL
+- It is non relational db
+- It is documented based, key value pairs, graph databases
+- Nosql are horizontally scalable 
+Note : horizontally scalable which means that they can handle increased traffic simply by adding more servers to the database
+- It has dynamic schema
+- More suitable for the hierarchical data stores as it supports key-value pair method.
+
+SQL
+- It is primarily called RDBMS
+- It is table based database
+- It is vertically scalable
+Note: vertically scalable which means that you increase the load on a single server by adding increasing component like RAM, SSD or CPU.
+- It has predefined schema
+- It is not suitable for hierarchical data storage
+===========================================
+*********
+SOLID Principles
+*********
+SOLID stands for:
+
+S : Single responsibility principle - “Do one thing and do it well
+    - class should have one and only one reason to change, meaning class should have only one job
+
+
+O : Open/Closed principle - A module should be open for extensions, but closed for          modification
+L : Liskov substitution principle - Derived methods should expect no more and provide no less
+I : Interface segregation principle - Many client specific interfaces are better than one general purpose interface
+D : Dependency inversion principle - Injection != Inversion”
+
+benifits
+- loose coupling
+- code maintainability
+- Dependency management
+
+
+
+https://www.youtube.com/watch?v=yxf2spbpTSw
+https://www.youtube.com/watch?v=gumM1H4qLUM
+
+========================================
+***************
+important links
+***************
+- golang
+https://www.educative.io/blog/50-golang-interview-questions
+
+------------------------------------------------------
+- microservice base interview questions
+https://www.edureka.co/blog/interview-questions/microservices-interview-questions/
+
+-------------------
+- rest api
+https://www.educative.io/courses/web-application-software-architecture-101/qADAzX6yorR?aid=5082902844932096&utm_source=google&utm_medium=paid&utm_content=search-dynamic-india&utm_term=&utm_campaign=Dynamic+Search+ads+-+India+-+NEW&utm_source=adwords&utm_medium=ppc&hsa_acc=5451446008&hsa_cam=11957940667&hsa_grp=113685778257&hsa_ad=489097595984&hsa_src=g&hsa_tgt=aud-524098480308:dsa-904715088424&hsa_kw=&hsa_mt=&hsa_net=adwords&hsa_ver=3&gclid=Cj0KCQjw4PKTBhD8ARIsAHChzRK_FvH8mdwbjZPBIQTDBl1hQPlwKgd2lzippK6l4DBS-ku7_iGd4s0aAqByEALw_wcB
+---------------------
+- grpc
+https://grpc.io/docs/languages/go/quickstart/
+https://youtu.be/BdzYdN_Zd9Q
+https://tutorialedge.net/golang/go-grpc-beginners-tutorial/#differences-between-grpc-and-rest
+-------------------------
+-protobuf
+https://developers.google.com/protocol-buffers/docs/gotutorial
+-------------------------
+-database
+https://www.guru99.com/sql-vs-nosql.html
+-------------------------
+- CI/CD
+https://www.geeksforgeeks.org/what-is-ci-cd/
+
+---------------------------------------------------------
+- CQRS
+https://www.ibm.com/cloud/architecture/architectures/event-driven-cqrs-pattern/
+
+https://medium.com/design-microservices-architecture-with-patterns/cqrs-design-pattern-in-microservices-architectures-5d41e359768c
+
+---------------------------------------------------------
+- SOLID
+https://www.youtube.com/watch?v=yxf2spbpTSw
+=====================
+Topics
+Golang - gRPC, go routine design patterns, Rest Api, TDD, BDD
+other - Kafka, redis, CI/CD, docker, kubernates
+awesome.com
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
