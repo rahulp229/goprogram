@@ -12,7 +12,7 @@ func main() {
 	var reader = bufio.NewReader(os.Stdin)
 	input, _ := reader.ReadString('\n')
 	fmt.Println("input : ", input)
-	flag := IsPalidrom(input)
+	flag := IsPalindrom(input)
 	if flag {
 		fmt.Println("string is palidrome", input)
 		os.Exit(1)
@@ -20,8 +20,11 @@ func main() {
 	fmt.Println("string is not palidrome", input)
 }
 
-func IsPalidrom(input string) bool {
+func IsPalindrom(input string) bool {
 	//in1 := "madam"
+	fmt.Println("before = ", input)
+	input = strings.ToLower(input)
+	fmt.Println("after = ", input)
 	for i, j := len(strings.Split(input, "\n")[0])-1, 0; i >= j; i, j = i-1, j+1 {
 		first := string(input[i])
 		second := string(input[j])

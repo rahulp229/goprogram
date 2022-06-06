@@ -4,9 +4,7 @@ import (
 	"bufio"
 	"encoding/csv"
 	"fmt"
-	"html"
 	"log"
-	"net/http"
 	"os"
 	"strings"
 )
@@ -19,7 +17,20 @@ func main() {
 		log.Fatalln("unableto read file ", err)
 	}
 	reader := csv.NewReader(f)
-	data, _ := reader.ReadAll()
+	data, err := reader.ReadAll()
+	if err != nil {
+		panic("errors >>> " + err.Error())
+	}
+	f1, err := os.Create("answer.csv")
+	if err != nil {
+		panic("create file errors >>> " + err.Error())
+	}
+	writers := csv.NewWriter(f1)
+	wdata := [][]string{{"what is go routine=thread"}, {"what is function closure= ANONYMOUS"}}
+	err = writers.WriteAll(wdata)
+	if err != nil {
+		panic("errors >>> " + err.Error())
+	}
 
 	//var questions []string
 	//	answers := map[string]bool{}
@@ -51,10 +62,10 @@ func main() {
 	fmt.Println("correct = ", noOfQuestionAnswerCorrect)
 	fmt.Println("incorrect = ", noOfQuestionNotAnswer)
 
-	http.HandleFunc("/info1", func(w http.ResponseWriter, r *http.Request) {
-		fmt.Fprintf(w, "Hello, %q", html.EscapeString(r.URL.Path))
-	})
-	log.Fatal(http.ListenAndServe(":8080", nil))
+	// http.HandleFunc("/info1", func(w http.ResponseWriter, r *http.Request) {
+	// 	fmt.Fprintf(w, "Hello, %q", html.EscapeString(r.URL.Path))
+	// })
+	// log.Fatal(http.ListenAndServe(":8080", nil))
 	//fmt.Print(http.ListenAndServe(":8080", nil))
 
 }
