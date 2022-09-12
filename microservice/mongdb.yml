@@ -1,0 +1,13 @@
+version: "2.2"
+
+services:
+  mongo_db:
+    image: mongo
+    environment:
+      - MONGO_USERNAME=root
+      - MONGO_PASSWORD=MONGO_PASSWORD
+    ports:
+      - 2717:27017
+    volumes:
+      - default
+
