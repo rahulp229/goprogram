@@ -143,9 +143,7 @@ SOLID stands for:
 
 S : Single responsibility principle - “Do one thing and do it well
     - class should have one and only one reason to change, meaning class should have only one job
-
-
-O : Open/Closed principle - A module should be open for extensions, but closed for          modification
+O : Open/Closed principle - A module should be open for extensions, but closed for modification
 L : Liskov substitution principle - Derived methods should expect no more and provide no less
 I : Interface segregation principle - Many client specific interfaces are better than one general purpose interface
 D : Dependency inversion principle - Injection != Inversion”
@@ -159,6 +157,11 @@ benifits
 
 https://www.youtube.com/watch?v=yxf2spbpTSw
 https://www.youtube.com/watch?v=gumM1H4qLUM
+=======================================================================
+******************
+Domain Modeling
+******************
+
 
 ========================================
 ***************

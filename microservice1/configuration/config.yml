@@ -1,3 +1,0 @@
-app:
-  env: uat
-  thirdPartyUrl : https://min-api.cryptocompare.com/data/pricemultifull?
