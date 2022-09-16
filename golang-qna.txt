@@ -115,6 +115,11 @@ Answer:
 
     Value(key interface{}) interface{}: Returns the value associated with key or nil if none
 -------------------------------------------------------------------------------------------------------
+Q11. what is immutability in go?
+Answer : 
+An immutable object can't be modified after it has been created. When a new value is needed, the accepted practice is to make a copy of the object that has the new value. Functional languages support immutability by design.
+
+
 - myself
 - i from mumbai
 - in qualification i did master computer applicaton from pune
