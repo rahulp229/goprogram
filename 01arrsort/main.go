@@ -11,6 +11,7 @@ func main() {
 	var arr2 = []int{1, 34, 56, 3, 78}
 	n := len(arr)
 	var arr1 = []int{}
+	//var arr1 = []int{2}
 	temp := 0
 	for i := 0; i < n; i++ {
 

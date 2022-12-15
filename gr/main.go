@@ -41,27 +41,3 @@ func test(w *csv.Writer, wg *sync.WaitGroup, str string, i int) {
 	time.Sleep(time.Second)
 
 }
-
-
-package main  
-import (  
-    "fmt"
-    "sync"
-    )
-var a  = 0  
-func increment(wg *sync.WaitGroup,var m *sync.Mutex) { 
-	m.Lock() 
-    a =  + 1
-	m.Unlock()
-    wg.Done()
-}
-func main() {  
-    var w sync.WaitGroup
-	var m sync.Mutex
-    for i := 0; i < 1000; i++ {
-        w.Add(1)        
-        go increment(&w)
-    }
-    w.Wait()
-    fmt.Println("result value of a", a)
-}
