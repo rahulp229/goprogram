@@ -1,4 +1,4 @@
-//problem statement --> building work pool using goroutine whoose doing n no.of jobs
+// problem statement --> building work pool using goroutine whoose doing n no.of jobs
 package main
 
 import (
@@ -21,11 +21,11 @@ func main() {
 	close(jobs)
 
 	for j := 1; j <= 5; j++ {
-		// <-result
+		<-result
 
 	}
 
-	time.Sleep(time.Millisecond * 10000)
+	//time.Sleep(time.Millisecond * 10000)
 }
 
 func worker(jobs <-chan int, result chan<- int, id int) {
@@ -36,6 +36,6 @@ func worker(jobs <-chan int, result chan<- int, id int) {
 		fmt.Println("worker ", id, " started job ", j)
 		time.Sleep(time.Second)
 		fmt.Println("worker ", id, " finished job ", j)
-		//result <- j * 2
+		result <- j * 2
 	}
 }

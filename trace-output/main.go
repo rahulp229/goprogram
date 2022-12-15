@@ -3,7 +3,6 @@ package main
 import (
 	"errors"
 	"fmt"
-	"sort"
 )
 
 func main() {
@@ -19,16 +18,16 @@ func main() {
 	names := [3]string{"a", "b", "c"}
 
 	sl := names[1:]
-	fmt.Println(sl, len(sl), cap(sl)) // guess the output ["a"] 1, 2
+	fmt.Println(sl, len(sl), cap(sl)) // trace output
 	//==========================================
-	colorsNew := [5]string{"red", "green", "blue", "pink", "purple"}
+	// colorsNew := [5]string{"red", "green", "blue", "pink", "purple"}
 
-	newSlic := colorsNew[1:2]
+	// newSlic := colorsNew[1:2]
 
-	fmt.Println("new slice, cap", newSlic, cap(newSlic), len(newSlic))
-	newSlic = append(newSlic, "A", "B", "C")
-	fmt.Println(newSlic)
-	fmt.Println(colorsNew)
+	// fmt.Println("new slice, cap", newSlic, cap(newSlic), len(newSlic))
+	// newSlic = append(newSlic, "A", "B", "C")
+	// fmt.Println(newSlic)
+	// fmt.Println(colorsNew)
 
 	//country := map[string]string{"india": "delhi"}
 
@@ -43,20 +42,20 @@ func main() {
 	//fmt.Println("success")
 
 	//some code ===========================================
-	num := []int{123, 32, 563, 46, 5124, 26}
-	fmt.Println("before : ", num)
-	for i, j := len(num)-1, 0; i > j; i, j = i-1, j+1 {
-		temp := num[j]
-		num[j] = num[i]
-		num[i] = temp
-	}
-	fmt.Println("reverse : ", num)
-	sort.Slice(num, func(i, j int) bool { return num[i] < num[j] })
-	fmt.Println("asending : ", num)
-	sort.Sort(sort.Reverse(sort.IntSlice(num)))
-	fmt.Println("desending : ", num)
+	// num := []int{123, 32, 563, 46, 5124, 26}
+	// fmt.Println("before : ", num)
+	// for i, j := len(num)-1, 0; i > j; i, j = i-1, j+1 {
+	// 	temp := num[j]
+	// 	num[j] = num[i]
+	// 	num[i] = temp
+	// }
+	// fmt.Println("reverse : ", num)
+	// sort.Slice(num, func(i, j int) bool { return num[i] < num[j] })
+	// fmt.Println("asending : ", num)
+	// sort.Sort(sort.Reverse(sort.IntSlice(num)))
+	// fmt.Println("desending : ", num)
 
-//====================================================
+	//====================================================
 
 }
 

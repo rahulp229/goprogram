@@ -3,12 +3,15 @@ package main
 import (
 	"fmt"
 	"math"
+
+	"google.golang.org/protobuf/internal/errors"
 )
 
 func main() {
 	fmt.Println("Hello, playground")
 	//arr := []float64{6, 7, 9, 11}
 	result := []float64{}
+	errors.Wrap()
 	arr := []float64{6, 8, 10, 14, 18, 14, 43}
 	for key, val := range arr {
 		if key < len(arr)-1 {
